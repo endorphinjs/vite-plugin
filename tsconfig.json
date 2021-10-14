@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "ESNext",
+    "lib": ["ES2017"],
+    "moduleResolution": "node",
+    "allowJs": false,
+    "outDir": "./out",
+    "resolveJsonModule": false,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": true,
+    "isolatedModules": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}
