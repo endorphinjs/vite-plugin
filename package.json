@@ -1,6 +1,6 @@
 {
   "name": "@endorphinjs/vite-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vite plugin for compiling EndorphinJS components",
   "main": "./out/index.js",
   "scripts": {
