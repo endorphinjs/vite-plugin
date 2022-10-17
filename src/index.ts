@@ -77,7 +77,7 @@ export function endorphin(inlineOptions?: Partial<Options>): Plugin {
 
         async transform(code, id) {
             const req = requestParser(id);
-            if (req) {
+            if (req && !req.sub) {
                 const result = await compile.template(req, code);
                 const entry = cache.get(req.filename);
                 if (entry) {

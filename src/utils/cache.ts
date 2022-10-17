@@ -37,7 +37,7 @@ export default class EndorphinCache {
             }
         });
 
-        this.cache.set(req.filename, {
+        this.cache.set(req.normalizedFilename, {
             template,
             scope,
             external,
@@ -74,7 +74,6 @@ export default class EndorphinCache {
             return entry.scope;
         }
     }
-
     resolve(id: string, file: string): string {
         if (file.startsWith('/')) {
             file = file.slice(1);
