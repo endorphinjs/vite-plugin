@@ -28,11 +28,14 @@ export function endorphin(inlineOptions?: Partial<Options>): Plugin {
             return {
                 css: {
                     postcss: {
-                        plugins: [postCSSPlugin(root => {
-                            const file = root.source?.input.file;
-                            if (file && scopeLookup.has(file)) {
-                                return scopeLookup.get(file);
-                            }
+                        plugins: [postCSSPlugin({
+                            scope: root => {
+                                const file = root.source?.input.file;
+                                if (file && scopeLookup.has(file)) {
+                                    return scopeLookup.get(file);
+                                }
+                            },
+                            classScope: inlineOptions?.template?.classScope
                         })]
                     }
                 }
